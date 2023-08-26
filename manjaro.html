@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>manjaro</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        background-image: url("https://wallpapercave.com/wp/6bAflAS.jpg");
+        background-position: center;
+        height: 100%;
+        width: 100%;
+      }
+      .image {
+        /* border: 1px solid black; */
+        position: relative;
+        display: flex;
+        position: sticky;
+        background-image: url("https://wallpapercave.com/wp/6bAflAS.jpg");
+        background-position: center;
+      }
+      .image img {
+        background-color: ghostwhite;
+        border-radius: 5px;
+      }
+      .image ul {
+        margin-top: 0px;
+        position: absolute;
+        margin-left: 80px;
+      }
+      .image ul li {
+        display: inline-block;
+        padding-top: 15px;
+        padding-left: 20px;
+      }
+      .image ul li:first-child {
+        padding-left: 0px;
+      }
+      .image ul li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .image ul li a:hover {
+        background-color: ghostwhite;
+      }
+      #input {
+        height: 54px;
+        width: 40%;
+        margin-left: 60%;
+      }
+      #list2 {
+        margin-top: 55px;
+        position: absolute;
+        margin-left: 80px;
+        border: solid 1px black;
+        margin-left: 85px;
+        width: 90%;
+        background-color: black;
+      }
+      #list2 li {
+        margin-bottom: 6px;
+        padding-top: 10px;
+      }
+      #list2 li a {
+        color: ghostwhite;
+        padding: 5px;
+      }
+      #list2 li a:hover {
+        color: black;
+      }
+      .body1 {
+        width: 40%;
+        /* border: 1px solid black; */
+        margin-left: 13%;
+        margin-top: 90px;
+        float: left;
+      }
+      #heading {
+        color: black;
+        font-weight: bolder;
+      }
+      #list3 {
+        float: left;
+        width: 50%;
+      }
+      .body2 {
+        float: left;
+        /* border: 1px solid black; */
+        width: 40%;
+      }
+      .lap {
+        padding: 10px;
+        height: 115px;
+        font-size: 10px;
+        border-radius: 5px;
+        width: 90%;
+      }
+      .part {
+        width: 100%;
+        display: flex;
+      }
+      .part h1 {
+        /* padding-left: 33%; */
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-weight: bolder;
+      }
+      .card {
+        width: 45%;
+        float: left;
+      }
+      .alternate {
+        margin-left: 100px;
+      }
+      .part2 {
+        margin-top: 5%;
+        /* height: 42%; */
+      }
+      .adjust {
+        font-size: 15px;
+      }
+      .sample {
+        font-size: 13px;
+      }
+      .option {
+        position: relative;
+      }
+      .inoption {
+        display: none;
+        position: absolute;
+        background-color: black;
+      }
+      .option .inoption a {
+        color: black;
+      }
+      .option:hover .inoption {
+        display: block;
+        position: absolute;
+      }
+      .option .inoption a:hover {
+        background-color: white;
+      }
+      .option:hover #mainhead {
+        background-color: ghostwhite;
+        color: black;
+      }
+
+      .foot {
+        /* border: 1px solid white; */
+        margin-top: 110%;
+        padding: 15px;
+      }
+      .card {
+        box-shadow: 3.5px 3.1px 2.7px rgba(0, 0, 0, 0.039),
+          8.5px 7.5px 6.5px rgba(0, 0, 0, 0.057),
+          16px 14.1px 12.3px rgba(0, 0, 0, 0.07),
+          28.6px 25.2px 21.9px rgba(0, 0, 0, 0.083),
+          53.5px 47.2px 40.9px rgba(0, 0, 0, 0.101),
+          128px 113px 98px rgba(0, 0, 0, 0.14);
+        position: relative;
+        cursor: pointer;
+      }
+      .card::after {
+        content: "";
+        width: 100%;
+        height: 0.2rem;
+        position: absolute;
+        background-color: black;
+        bottom: 0;
+        left: 0;
+        transform: scale(0, 1);
+        transition: transform 1s ease;
+        transform-origin: 0% 100%;
+      }
+      .card:hover::after {
+        transform: scale(1, 1);
+      }
+      .lap:hover {
+        border: 2px solid ghostwhite;
+      }
+
+      @media screen and (max-width: 900px) {
+        .body1,
+        .body2 {
+          width: 100%;
+        }
+        .body1 {
+          /* margin-top: 50%; */
+          width: 70%;
+        }
+        .part {
+          padding-top: 30px;
+        }
+        .card {
+          width: 100%;
+          margin-left: 0;
+        }
+        #list2 {
+          width: 95%;
+          margin-left: 0;
+          display: none;
+        }
+        .image img {
+          width: 50px;
+          height: 50px;
+        }
+        /* #list2 li:first-child {
+          padding-left: 20px;
+      } */
+        .image ul li {
+          display: none;
+        }
+        /* #list2 li {
+          display: block;
+        } */
+        #input {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container image fixed-top">
+      <img src="manjaro.svg" alt="" width="100px" height="100px" />
+      <ul>
+        <li><a href="">Merchandise</a></li>
+        <li><a href="">Hardware</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Download</a></li>
+      </ul>
+      <input
+        id="input"
+        type="text"
+        name="search"
+        class="form-control"
+        placeholder="search here"
+      />
+      <ul id="list2">
+        <li>
+          <div class="option">
+            <a id="mainhead" href="">Project</a>
+            <div class="inoption">
+              <a href="">Blog</a>
+              <a href="">Mirrors</a>
+              <a href="">Team</a>
+              <a href="">Volunteers</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="option">
+            <a id="mainhead" href="">Explore</a>
+            <div class="inoption">
+              <a href="">Video</a>
+              <a href="">Software</a>
+              <a href="">Packages</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="option">
+            <a id="mainhead" href="">Learn</a>
+            <div class="inoption">
+              <a href="">Forum</a>
+              <a href="">Wikipedia</a>
+              <a href="">Docs</a>
+              <a href="">MiniTutorials</a>
+              <a href="">Cheatsheet</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div id="mainhead" class="option">
+            <a href="">Supporters</a>
+            <div class="inoption">
+              <a href="">Sponsers</a>
+              <a href="">Partners</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="container-fluid body1">
+      <h1 id="heading">MANJARO EMPOWERING DEVICES AND USERS</h1>
+      <br />
+      <p>
+        Manjaro is a free and open source Linux operating system that emphasizes
+        user privacy and control of their hardware. It is user-friendly and
+        suitable for those new to computers, and can be installed on a wide
+        range of devices. Architectures supported include x86-64 and ARM, making
+        it a great choice for any device or computing environment. Manjaro
+        provides numerous customization options and applications, as well as
+        security and privacy features. It also offers several graphical user
+        interfaces.
+      </p>
+      <ul id="list3" type="filled-circle">
+        <li>Plug & Play Hardware</li>
+        <li>Rolling Release</li>
+        <li>Wide Range Of Software</li>
+      </ul>
+      <ul id="list3" type="filled-circle">
+        <li>Secure By Default</li>
+        <li>Lightning Fast</li>
+        <li>Easily Installed</li>
+      </ul>
+      <button class="btn btn-light btn-lg text-success">Get Manjaro</button>
+      <br /><br /><br /><br />
+    </div>
+    <div class="container-fluid body2">
+      <img src="lap.png" alt="" width="400px" height="400px" />
+      <div class="jumbotron-fluid bg-dark text-white lap">
+        <h3>Slimbook Titan</h3>
+        <p>
+          The Slimbook Titan is a high-performance laptop designed for power
+          users and professionals. Equipped with the latest processors, high-end
+          graphics cards, and fast storage, this laptop delivers exceptional
+          performance for demanding tasks. Its sleek and modern design makes it
+          a stylish choice for anyone in need of a powerful laptop.
+        </p>
+      </div>
+    </div>
+    <div class="container-fluid bg-dark text-light part">
+      <div class="container">
+        <h1 class="text-center">DO ANY TASK IN MANJARO</h1>
+        <div class="card text-dark">
+          <div class="card-header">Open source</div>
+          <div class="card-body">
+            Choose a desktop user interface to create your ideal computing
+            environment. With Manjaro, you can easily install a plethora of Open
+            Source software, utilizing either native packages, Flatpak or Snap
+            Packages. Additionally, you can take advantage of the Arch User
+            Repository to build your own customized packages. Manjaro provides
+            the ultimate flexibility and control over your computing experience.
+          </div>
+        </div>
+        <div class="card text-dark alternate">
+          <div class="card-header">Compatibility</div>
+          <div class="card-body">
+            Boost older hardware or fully harness the capabilities of the latest
+            hardware. Manjaro is powered by the robust Linux Kernel and supports
+            touchscreens, sound cards, graphics cards, and peripherals out of
+            the box, without the need to search for Drivers from manufacturers.
+            This means you can enjoy a hassle-free experience with Manjaro,
+            focusing on your work or leisure activities rather than dealing with
+            tedious driver installations.
+          </div>
+        </div>
+
+        <div class="card text-dark part2">
+          <div class="card-header">Office</div>
+          <div class="card-body">
+            Effortlessly tackle any office task with the comprehensive office
+            suites available. These suites support multiple document formats and
+            adhere to document format standards, ensuring compatibility and ease
+            of use. In addition, Manjaro offers a range of email clients,
+            allowing you to stay on top of your email inbox and communication
+            needs. Stay organized, productive, and efficient.
+          </div>
+        </div>
+
+        <div class="card text-dark part2 alternate">
+          <div class="card-header">Gaming</div>
+          <div class="card-body">
+            Seamless gaming experience with the option to play native games
+            using Steam or Lutris. You can also emulate other game platforms
+            with Steam Proton or Wine. Retro gaming enthusiasts can enjoy
+            playing their favorite classic games using the various retro
+            emulators available on the platform. Simplified media consumption
+            with the ability to play media or video content, and even set up a
+            dedicated media center.
+          </div>
+        </div>
+
+        <div class="card text-dark part2 adjust">
+          <div class="card-header">Creativity</div>
+          <div class="card-body">
+            Unleash your creativity and bring your design projects to life.
+            Design graphics and vector art using Inkscape or GIMP, or create 3D
+            models with Blender or FreeCAD. When you're ready to print your 3D
+            designs, use Prusa Slicer to simplify the process. You can also edit
+            your videos using popular software options like KDE-Live or
+            OpenShot. For content creators Open Broadcast Software (OBS) for
+            recording and streaming videos. Take your designs and video content
+            to the next level.
+          </div>
+        </div>
+
+        <div class="card text-dark part2 alternate adjust">
+          <div class="card-header">DevOps</div>
+          <div class="card-body">
+            Take full control of your projects by utilizing the powerful git
+            version control system. In addition, the platform offers robust
+            virtualization capabilities, enabling you to deploy and run virtual
+            machines with ease. Simplified containerization with the ability to
+            manage Docker or Kubernetes instances. You can remotely access,
+            configure, and administer your machines via various protocols such
+            as SSH, VNC, RDP, or Telnet, giving you unparalleled flexibility and
+            control over your computing environment.
+          </div>
+        </div>
+        <div class="card text-dark part2 adjust sample">
+          <div class="card-header">Development</div>
+          <div class="card-body">
+            Manjaro offers a versatile platform for software development with
+            support for many programming language. You can build software and
+            user interfaces using your preferred programming language and test
+            on the latest software with a rolling release model. The platform
+            also provides access to a range of popular text editors, including
+            Visual Studio Code, PyCharm, and Sublime Text. For more complex
+            development projects, you can run a comprehensive integrated
+            development environment (IDE) such as Eclipse or Apache NetBeans.
+            Bring your software development projects to life.
+          </div>
+        </div>
+
+        <div class="card text-dark part2 alternate">
+          <div class="card-header">Communication</div>
+          <div class="card-body">
+            Stay connected with your team in real-time using a variety of
+            communication tools. Conduct chat or video meetings seamlessly using
+            Mattermost, Slack, Telegram. The platform offers a vast selection of
+            communication tools to suit your team's specific needs. Easily
+            collaborate and communicate with your team.
+          </div>
+        </div>
+        <br />
+        <div class="foot col-xl-12 col-lg-12">
+          <div style="float: left" class="col-xl-4 col-lg-4">
+            Manjaro Linux Open Source operating system is and always will be
+            provided for you to download use or modify free of charge and
+            completely open source. <br />
+            <br />
+            The Manjaro project is backed up by Manjaro Gmbh & Co, KG an Open
+            Source driven company.
+          </div>
+          <div style="float: left" class="col-xl-3 col-lg-3">
+            <div style="float: left; width: 50%">
+              <h3>Legal</h3>
+              <ul style="padding-left: 0">
+                <li>Privacy Policy</li>
+                <li>Terms of use</li>
+                <li>Imprint</li>
+              </ul>
+            </div>
+            <div style="float: left; width: 50%">
+              <h3>Social</h3>
+              <ul style="padding-left: 10px">
+                <li>Facebook</li>
+                <li>Telegram</li>
+                <li>Youtube</li>
+                <li>Twitter</li>
+              </ul>
+            </div>
+          </div>
+          <div style="float: left" class="col-xl-5 col-lg-5">
+            <div style="float: left; width: 50%">
+              <h3>Development</h3>
+              <ul style="padding-left: 0">
+                <li>Privacy Policy</li>
+                <li>Terms of use</li>
+                <li>Imprint</li>
+              </ul>
+            </div>
+            <div style="float: left; width: 50%">
+              <h3>Mailing Lists</h3>
+              <ul style="padding-left: 10px">
+                <li>Facebook</li>
+                <li>Telegram</li>
+                <li>Youtube</li>
+                <li>Twitter</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%">
+          <h5>© Copyright 2023 Manjaro GmbH & Co KG All rights reserved.</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
